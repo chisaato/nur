@@ -1,4 +1,10 @@
-{ stdenv, fetchurl,lib }:
+{
+  stdenv,
+  fetchurl,
+  lib,
+  nix-update-script,
+
+}:
 
 stdenv.mkDerivation rec {
   name = "garden-bin";
@@ -8,6 +14,7 @@ stdenv.mkDerivation rec {
     sha256 = "113cach2srja2x6gqxv8jcn57jxsdzwwjmhzn0nhcavl95m715p5";
   };
   sourceRoot = ".";
+  passthru.updateScript = nix-update-script { };
 
   installPhase = ''
     mkdir -p $out/bin

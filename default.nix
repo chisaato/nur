@@ -16,7 +16,9 @@
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
+
   garden-bin = pkgs.callPackage ./pkgs/garden-bin { };
+  # qwen-code = pkgs.callPackage ./pkgs/qwen-code { };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
